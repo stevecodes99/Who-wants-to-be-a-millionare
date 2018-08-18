@@ -18,7 +18,7 @@ Number.prototype.money = function(fixed, decimalDelim, breakDelim){
 	i = parseInt(n = Math.abs(+n || 0).toFixed(fixed)) + "", 
 	j = (j = i.length) > 3 ? j % 3 : 0;
 	return negative + (j ? i.substr(0, j) +
-		 breakDelim : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + breakDelim) +
+		 breakDelim : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "Rs.1" + breakDelim) +
 		  (fixed ? decimalDelim + Math.abs(n - i).toFixed(fixed).slice(2) : "");
 }
 
